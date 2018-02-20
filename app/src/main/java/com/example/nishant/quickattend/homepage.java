@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HomePage extends AppCompatActivity {
+public class homepage extends AppCompatActivity {
 
     private TextView mTextMessage;
 
@@ -23,12 +23,13 @@ public class HomePage extends AppCompatActivity {
                 case R.id.navigation_classes:
                     mTextMessage.setText(R.string.title_classes);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
+//                case R.id.navigation_statistics:
+//                    mTextMessage.setText(R.string.title_statistics);
+//                    return true;
                 case R.id.navigation_settings:
                     mTextMessage.setText(R.string.title_settings);
                     return true;
+
             }
             return false;
         }
@@ -37,13 +38,13 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.bottomnavbar);
 
 
-        
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
 
 }
