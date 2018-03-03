@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homepage">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/homecurrent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="@string/title_currentclass" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_below="@+id/homecurrent"
         android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:text="@string/title_classes" />
+        />
+
+    <TextView
+        android:id="@+id/homenext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/listview"
+        android:text="@string/title_nextclass" />
+
+    <ListView
+        android:id="@+id/listview2"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_below="@+id/homenext"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/listview2"
+        android:text="@string/statistics" />
+
+
 
 </RelativeLayout>

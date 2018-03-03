@@ -4,21 +4,23 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@mipmap/icon_home"
+        app:showAsAction="always|withText"
         android:title="@string/title_home" />
-
-    <!--<item-->
-        <!--android:id="@+id/navigation_statistics"-->
-        <!--android:icon="@drawable/ic_notifications_black_24dp"-->
-        <!--android:title="@string/title_statistics" />-->
+    <item
+        android:id="@+id/navigation_statistics"
+        android:icon="@mipmap/icon_stats"
+        app:showAsAction="always|withText"
+        android:title="@string/title_statistics" />
     <item
         android:id="@+id/navigation_classes"
-        android:icon="?android:attr/actionModePasteDrawable"
-
+        android:icon="@mipmap/icon_list"
+        app:showAsAction="always|withText"
         android:title="@string/title_classes" />
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@android:drawable/ic_menu_share"
+        android:icon="@mipmap/icon_settings"
+        app:showAsAction="always|withText"
         android:title="@string/title_settings" />
 
 </menu>

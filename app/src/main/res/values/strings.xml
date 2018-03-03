@@ -2,6 +2,9 @@
     <string name="app_name">QuickAttend</string>
     <string name="title_home">Home</string>
     <string name="title_classes">Classes</string>
+    <string name="title_currentclass">Current Class</string>
+    <string name="title_nextclass">Next Class</string>
     <string name="title_statistics">Stats</string>
+    <string name="statistics">Statistics</string>
     <string name="title_settings">Settings</string>
 </resources>
