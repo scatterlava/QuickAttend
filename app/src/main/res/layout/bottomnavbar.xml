@@ -7,17 +7,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.nishant.quickattend.homepage">
 
-    <include layout="@layout/activity_home_page" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_home_page"
+        android:layout_width="wrap_content"
+        android:layout_height="546dp" />
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:itemBackground="@color/lightgrey"
-        app:itemIconTint="@color/grey"
-        app:itemTextColor="@color/grey"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation" />
+        android:layout_gravity="bottom">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:itemBackground="@color/colorLightPrimary"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/navigation" />
+
+    </RelativeLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

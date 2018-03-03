@@ -4,23 +4,31 @@
 
     <item
         android:id="@+id/navigation_home"
+        android:checkable="true"
         android:icon="@mipmap/icon_home"
-        app:showAsAction="always|withText"
-        android:title="@string/title_home" />
+        android:title="@string/title_home"
+        android:visible="true"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/navigation_statistics"
+        android:checkable="true"
         android:icon="@mipmap/icon_stats"
-        app:showAsAction="always|withText"
-        android:title="@string/title_statistics" />
+        android:title="@string/title_statistics"
+        android:visible="true"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/navigation_classes"
+        android:checkable="true"
         android:icon="@mipmap/icon_list"
-        app:showAsAction="always|withText"
-        android:title="@string/title_classes" />
+        android:title="@string/title_classes"
+        android:visible="true"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/navigation_settings"
+        android:checkable="true"
         android:icon="@mipmap/icon_settings"
-        app:showAsAction="always|withText"
-        android:title="@string/title_settings" />
+        android:title="@string/title_settings"
+        android:visible="true"
+        app:showAsAction="always|withText" />
 
 </menu>
