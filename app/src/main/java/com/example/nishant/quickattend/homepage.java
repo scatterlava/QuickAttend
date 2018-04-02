@@ -40,7 +40,7 @@ public class homepage extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                    // mTextMessage.setText(R.string.title_home);
-
+                
                 case R.id.navigation_classes:
                    // mTextMessage.setText(R.string.title_classes);
 
