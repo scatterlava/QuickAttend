@@ -2,14 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/statspage">
+    android:id="@+id/settingspage">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Statistics"
+        android:text="Settings"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:layout_centerHorizontal="true"
         />
+
 </RelativeLayout>
