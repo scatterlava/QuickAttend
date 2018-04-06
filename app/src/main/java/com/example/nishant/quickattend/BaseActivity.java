@@ -11,7 +11,6 @@ import android.widget.RadioGroup;
 
 public class BaseActivity extends AppCompatActivity {
 
-
     RadioGroup radioGroup1;
     RadioButton setting;
 
