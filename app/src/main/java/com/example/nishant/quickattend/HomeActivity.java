@@ -17,7 +17,7 @@ import android.widget.RelativeLayout;
 
 public class HomeActivity extends BaseActivity {
     FrameLayout dynamicContent;
-    CoordinatorLayout bottonNavBar;
+    CoordinatorLayout base;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +28,16 @@ public class HomeActivity extends BaseActivity {
         //dynamically include the  current activity layout into  baseActivity layout.now all
         // the view of baseactivity is   accessible in current activity.
         dynamicContent = (FrameLayout) findViewById(R.id.dynamicContent);
-        bottonNavBar = (CoordinatorLayout) findViewById(R.id.BaseActivity);
+        base = (CoordinatorLayout) findViewById(R.id.BaseActivity);
         View wizard = getLayoutInflater().inflate(R.layout.activity_home_page, null);
         dynamicContent.addView(wizard);
 
 
-        //get the reference of RadioGroup.
-        RadioGroup rg = (RadioGroup) findViewById(R.id.BottomNavBar);
-        RadioButton rb = (RadioButton) findViewById(R.id.homebutton);
-        // Change the corresponding icon and text color on nav button click.
-        rb.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.ic_home, 0, 0);
-        rb.setTextColor(Color.parseColor("#3F51B5"));
+//        //get the reference of RadioGroup.
+//        RadioGroup rg = (RadioGroup) findViewById(R.id.BottomNavBar);
+//        RadioButton rb = (RadioButton) findViewById(R.id.homebutton);
+//        // Change the corresponding icon and text color on nav button click.
+//        rb.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.ic_home, 0, 0);
+//        rb.setTextColor(Color.parseColor("#3F51B5"));
     }
 }  //end of class
