@@ -3,13 +3,16 @@ package com.example.nishant.quickattend;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 public class StatsActivity extends BaseActivity {
-    RelativeLayout dynamicContent, bottonNavBar;
+    FrameLayout dynamicContent;
+    CoordinatorLayout bottonNavBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,20 +20,18 @@ public class StatsActivity extends BaseActivity {
         //setContentView(R.layout.activity_matching);
 
 
-        //dynamically include the  current activity      layout into  baseActivity layout.now all the view of baseactivity is   accessible in current activity.
-        dynamicContent = (RelativeLayout) findViewById(R.id.statspage);
-        bottonNavBar = (RelativeLayout) findViewById(R.id.bottonNavBar);
+        //dynamically include the  current activity layout into  baseActivity layout.now all
+        // the view of baseactivity is   accessible in current activity.
+        dynamicContent = (FrameLayout) findViewById(R.id.dynamicContent);
+        bottonNavBar = (CoordinatorLayout) findViewById(R.id.BaseActivity);
         View wizard = getLayoutInflater().inflate(R.layout.activity_statistics, null);
         dynamicContent.addView(wizard);
 
 
         //get the reference of RadioGroup.
-
-        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup1);
+        RadioGroup rg = (RadioGroup) findViewById(R.id.BottomNavBar);
         RadioButton rb = (RadioButton) findViewById(R.id.statsbutton);
-
         // Change the corresponding icon and text color on nav button click.
-
         rb.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.ic_stats, 0, 0);
         rb.setTextColor(Color.parseColor("#3F51B5"));
     }

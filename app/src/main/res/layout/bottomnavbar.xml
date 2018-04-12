@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="56dp"
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:elevation="10dp"
     android:background="@color/white"
-    android:id="@+id/bottonNavBar"
-    android:paddingTop="5dp"
+    android:id="@+id/BaseActivity"
     android:orientation="horizontal"
     android:layout_alignParentBottom="true"
     android:foregroundGravity="bottom"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <FrameLayout
+        android:id="@+id/dynamicContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="75dp"
+        android:background="@color/white">
+
+    </FrameLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:gravity="center"
-        android:layout_height="match_parent"
+        android:id="@+id/BottomNavBar"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:layout_gravity="bottom">
 
         <RadioButton
+            android:id="@+id/homebutton"
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="match_parent"
@@ -30,10 +38,10 @@
             android:checked="false"
             android:textSize="12sp"
             android:drawableTop="@mipmap/icon_home"
-            android:textColor="@color/black"
-            android:id="@+id/homebutton"/>
+            android:textColor="@color/black"/>
 
         <RadioButton
+            android:id="@+id/classbutton"
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="match_parent"
@@ -44,26 +52,26 @@
             android:textSize="12sp"
             android:drawableTop="@mipmap/icon_list"
             android:textColor="@color/black"
-            android:id="@+id/classbutton"
             android:text="Classes"/>
 
         <RadioButton
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="match_parent"
             android:id="@+id/statsbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:button="@null"
-            android:paddingTop="5dp"
+            android:checked="false"
+            android:drawableTop="@mipmap/icon_stats"
+            android:gravity="center"
             android:paddingBottom="2dp"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:textSize="12sp"
-            android:drawableTop="@mipmap/icon_stats"
+            android:paddingTop="5dp"
+            android:text="Stats"
             android:textColor="@color/black"
-            android:text="Stats"/>
+            android:textSize="12sp" />
         <RadioButton
+            android:id="@+id/settingbutton"
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="match_parent"
@@ -74,19 +82,9 @@
             android:textSize="12sp"
             android:drawableTop="@mipmap/icon_settings"
             android:textColor="@color/black"
-            android:id="@+id/settingbutton"
+
             android:text="Settings"/>
     </RadioGroup>
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
 
-<!--
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:id="@+id/dynamicContent"
-android:orientation="vertical"
-android:layout_marginBottom="56dp"
-android:background="@color/white"
-android:layout_gravity="bottom">
-</LinearLayout>-->
