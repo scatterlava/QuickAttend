@@ -1,4 +1,4 @@
-package com.example.nishant.quickattend.API.Adapters;
+package com.example.nishant.quickattend.API;
 
 import com.google.gson.JsonElement;
 

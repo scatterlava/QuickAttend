@@ -1,4 +1,4 @@
-package com.example.nishant.quickattend.API.Adapters;
+package com.example.nishant.quickattend.Adapters;
 
 import android.app.Activity;
 import android.text.TextUtils;
@@ -13,7 +13,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.apache.commons.lang3.StringUtils;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;

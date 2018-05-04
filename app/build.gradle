@@ -44,4 +44,5 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'org.apache.commons:commons-lang3:3.6'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
 }

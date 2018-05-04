@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.nishant.quickattend.API.APIClient;
-import com.example.nishant.quickattend.API.Adapters.SectionAdapter;
+import com.example.nishant.quickattend.Adapters.SectionAdapter;
 import com.example.nishant.quickattend.API.SectionService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

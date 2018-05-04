@@ -8,20 +8,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.nishant.quickattend.API.APIClient;
-import com.example.nishant.quickattend.API.Adapters.StatisticService;
-import com.google.gson.JsonArray;
+import com.example.nishant.quickattend.API.StatisticService;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import retrofit2.Call;
 import retrofit2.Callback;

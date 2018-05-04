@@ -1,17 +1,18 @@
 package com.example.nishant.quickattend;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.nishant.quickattend.API.APIClient;
-import com.example.nishant.quickattend.API.Adapters.SectionAdapter;
-import com.example.nishant.quickattend.API.AuthenticationService;
+import com.example.nishant.quickattend.Adapters.SectionAdapter;
 import com.example.nishant.quickattend.API.SectionService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -72,14 +73,13 @@ public class HomeFragment extends Fragment {
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                if (response.isSuccessful() && !response.body().isJsonNull()) {
-                    //TODO: stock section in list
-                    JsonObject jObj = response.body().getAsJsonObject();
+                JsonObject jObj = response.body().getAsJsonObject();
+                if (response.isSuccessful() && jObj.entrySet().size() != 0) {
                     currentSection.add(jObj);
                     mCurrentSectionView.invalidateViews();
                     mSelf.getSections(jObj.get("_id").getAsString());
                 } else {
-                    mSelf.getSections(null);
+                    mSelf.getSections("");
                 }
 
             }
@@ -92,6 +92,15 @@ public class HomeFragment extends Fragment {
 
         SectionAdapter sectionAdapter = new SectionAdapter(this.getActivity(), currentSection);
         mCurrentSectionView.setAdapter(sectionAdapter);
+        mCurrentSectionView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(mSelf.getActivity(), SessionActivity.class);
+                intent.putExtra("currentSection", currentSection.get(0).toString());
+                startActivity(intent);
+                return ;
+            }
+        });
 
         SectionAdapter sectionAdapterNext = new SectionAdapter(this.getActivity(), nexToday);
         mNextTodayView.setAdapter(sectionAdapterNext);
@@ -135,7 +144,7 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                 JsonArray jObj = response.body().getAsJsonArray();
 
-                if (response.isSuccessful() && !jObj.isJsonNull()) {
+                if (response.isSuccessful() && jObj.size() != 0) {
                     for (JsonElement section: jObj) {
                         if (!section.getAsJsonObject().get("_id").getAsString().contentEquals(idCurrent)) {
                             nexToday.add(section.getAsJsonObject());

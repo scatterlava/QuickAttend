@@ -74,8 +74,10 @@ public class LoginActivity extends AppCompatActivity {
                 call.cancel();
             }
         });
+    }
 
-
-
+    public void signup(View v) {
+        Intent i = new Intent(this, SignupActivity.class);
+        startActivity(i);
     }
 }

@@ -15,4 +15,7 @@ public interface AuthenticationService {
 
     @POST("signin")
     Call<JsonElement> signin(@Body RequestBody body);
+
+    @POST("signup")
+    Call<JsonElement> signup(@Body RequestBody body);
 }
