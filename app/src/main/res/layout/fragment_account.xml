@@ -4,10 +4,101 @@
     android:layout_height="match_parent"
     tools:context="com.example.nishant.quickattend.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment ACCOUNT" />
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/account_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/FirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:layout_marginTop="50dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/account_title"/>
+        <EditText
+            android:id="@+id/text1"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/account_title"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_toRightOf="@+id/FirstName"
+            />
+        <TextView
+            android:id="@+id/LastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/FirstName" />
+        <EditText
+            android:id="@+id/text2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/FirstName"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_toRightOf="@+id/LastName"
+            />
+        <TextView
+            android:id="@+id/studentIDfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student ID"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/LastName" />
+        <EditText
+            android:id="@+id/text3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/LastName"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_toRightOf="@+id/studentIDfield"
+            />
+        <TextView
+            android:id="@+id/CSULBmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSULB mail"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/studentIDfield" />
+
+        <EditText
+            android:id="@+id/text4"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/studentIDfield"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_toRightOf="@+id/CSULBmail"
+            />
+
+        <Button
+            android:id="@+id/LogoutButton"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="200dp"
+            android:layout_below="@+id/CSULBmail"
+            android:text="Log out"
+            android:textColor="@color/colorWhite"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
 
 </FrameLayout>
