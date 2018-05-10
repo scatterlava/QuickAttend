@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:text="Settings"
             android:textSize="30sp"
+            android:layout_centerHorizontal="true"
             android:textStyle="bold" />
 
         <TextView
@@ -22,77 +23,96 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="First Name"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_below="@+id/account_title"/>
-        <EditText
+
+        <TextView
             android:id="@+id/text1"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/account_title"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="40dp"
-            android:layout_toRightOf="@+id/FirstName"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/FirstName"
+            android:textAlignment="viewEnd"
+            android:text=""
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/LastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Last Name"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_below="@+id/FirstName" />
-        <EditText
+
+        <TextView
             android:id="@+id/text2"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/FirstName"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="40dp"
-            android:layout_toRightOf="@+id/LastName"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/LastName"
+            android:textAlignment="viewEnd"
+            android:text=""
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/studentIDfield"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Student ID"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_below="@+id/LastName" />
-        <EditText
+
+        <TextView
             android:id="@+id/text3"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/LastName"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="40dp"
-            android:layout_toRightOf="@+id/studentIDfield"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/studentIDfield"
+            android:textAlignment="viewEnd"
+            android:text=""
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/CSULBmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CSULB mail"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_below="@+id/studentIDfield" />
 
-        <EditText
+        <TextView
             android:id="@+id/text4"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/studentIDfield"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="40dp"
-            android:layout_toRightOf="@+id/CSULBmail"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/CSULBmail"
+            android:textAlignment="viewEnd"
+            android:text=""
+            android:textSize="18sp"/>
 
         <Button
             android:id="@+id/LogoutButton"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:background="@color/colorPrimary"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="250dp"
             android:layout_below="@+id/CSULBmail"
             android:text="Log out"
             android:textColor="@color/colorWhite"

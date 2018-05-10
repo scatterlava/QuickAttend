@@ -10,31 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-
-import com.example.nishant.quickattend.API.APIClient;
-import com.example.nishant.quickattend.API.SectionService;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import org.json.JSONArray;
+import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AccountFragment extends Fragment {
     private ClassesFragment.OnFragmentInteractionListener mListener;
-    /*private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";*/
-    private static EditText Cfirstname, Clastname, CSID, Cmail;
+
+    //private TextView Cfirstname, Clastname, CSID, Cmail;
 
 
-    private String fname = "", lname = "", studentid = "", email = "";
-
-    private SectionService sectionService;
+    private String fname = "x", lname = "y", email = "z";
+    private String studentid = "a";
 
     public AccountFragment() {
         // Required empty public constructor
@@ -51,7 +39,7 @@ public class AccountFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sectionService = APIClient.getClient().create(SectionService.class);
+
     }
 
     @Override
@@ -61,42 +49,34 @@ public class AccountFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_account, container, false);
 
         //EditText linked
-        Cfirstname = v.findViewById(R.id.text1);
-        Clastname = v.findViewById(R.id.text2);
-        CSID = v.findViewById(R.id.text3);
-        Cmail = v.findViewById(R.id.text4);
+        TextView Cfirstname = v.findViewById(R.id.text1);
+        TextView Clastname = v.findViewById(R.id.text2);
+        TextView CSID = v.findViewById(R.id.text3);
+        TextView Cmail = v.findViewById(R.id.text4);
 
         //get data for current user
 
-        Call<JsonElement> call = sectionService.getCurrent();
-        call.enqueue(new Callback<JsonElement>() {
-                         @Override
-                         public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                             if (response.isSuccessful()) {
-                                 JsonObject jResponse = response.body().getAsJsonObject();
+        //TODO Get shared preference then loop with session id
+        SharedPreferences sharedPref = getActivity().getSharedPreferences(getString(R.string.shared_preference), Context.MODE_PRIVATE);
 
-                                 //TODO Get shared preference then loop with session id
-                                 SharedPreferences sharedPref = getActivity().getSharedPreferences
-                                         (getString(R.string.shared_preference), Context.MODE_PRIVATE);
-
-                                 try {
-                                     JSONObject currentUser = new JSONObject(sharedPref.getString("currentUser", null));
-                                     if (currentUser != null) {
-                                         fname = currentUser.getString("firstname");
-                                         lname = currentUser.getString("lastname");
-                                         studentid = currentUser.getString("_id");
-                                         email = currentUser.getString("email");
-                                     }
-                                 } catch (JSONException e) {
-                                     e.printStackTrace();
-                                 }
-                             }
-                         }
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                call.cancel();
+         try {
+            JSONObject currentUser = new JSONObject(sharedPref.getString("currentUser", null));
+            if (currentUser != null) {
+                System.out.println("You were here");
+                fname = currentUser.getString("firstName");
+                lname = currentUser.getString("lastName");
+                studentid = currentUser.getString("id");
+                email = currentUser.getString("email");
             }
-        });
+         } catch (JSONException e) {
+            e.printStackTrace();
+         }
+
+        System.out.println("and here as well");
+        System.out.println(fname);
+        System.out.println(lname);
+        System.out.println(studentid);
+        System.out.println(email);
 
         //set data to editText fields in account
         Cfirstname.setText(fname);
@@ -108,8 +88,8 @@ public class AccountFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //onclicking the logout button:
-                //it should "log out" current user and go back to login page
+                Intent i = new Intent(getActivity() , LoginActivity.class);
+                startActivity(i);
 
             }
         });
