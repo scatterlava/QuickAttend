@@ -17,18 +17,15 @@ import org.json.JSONObject;
 
 public class AccountFragment extends Fragment {
     private ClassesFragment.OnFragmentInteractionListener mListener;
-
-    //private TextView Cfirstname, Clastname, CSID, Cmail;
-
-
     private String fname = "x", lname = "y", email = "z";
     private String studentid = "a";
+    private Button logout;
 
     public AccountFragment() {
         // Required empty public constructor
     }
 
-   Button logout;
+
 
     // TODO: Rename and change types and number of parameters
     public static AccountFragment newInstance() {
@@ -55,14 +52,11 @@ public class AccountFragment extends Fragment {
         TextView Cmail = v.findViewById(R.id.text4);
 
         //get data for current user
-
-        //TODO Get shared preference then loop with session id
         SharedPreferences sharedPref = getActivity().getSharedPreferences(getString(R.string.shared_preference), Context.MODE_PRIVATE);
 
          try {
             JSONObject currentUser = new JSONObject(sharedPref.getString("currentUser", null));
             if (currentUser != null) {
-                System.out.println("You were here");
                 fname = currentUser.getString("firstName");
                 lname = currentUser.getString("lastName");
                 studentid = currentUser.getString("id");
@@ -71,12 +65,6 @@ public class AccountFragment extends Fragment {
          } catch (JSONException e) {
             e.printStackTrace();
          }
-
-        System.out.println("and here as well");
-        System.out.println(fname);
-        System.out.println(lname);
-        System.out.println(studentid);
-        System.out.println(email);
 
         //set data to editText fields in account
         Cfirstname.setText(fname);
@@ -95,13 +83,6 @@ public class AccountFragment extends Fragment {
         });
 
         return v;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
     @Override
