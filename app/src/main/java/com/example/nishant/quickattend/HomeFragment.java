@@ -19,6 +19,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -42,6 +44,7 @@ public class HomeFragment extends Fragment {
     private List<JsonObject> nexToday = new ArrayList<>();
     private ListView mCurrentSectionView;
     private ListView mNextTodayView;
+    private String[] dayNames = new String[]{"", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
 
     private HomeFragment mSelf;
 
@@ -147,7 +150,28 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful() && jObj.size() != 0) {
                     for (JsonElement section: jObj) {
                         if (!section.getAsJsonObject().get("_id").getAsString().contentEquals(idCurrent)) {
-                            nexToday.add(section.getAsJsonObject());
+                            Date today = new Date();
+                            JsonArray days = section.getAsJsonObject().getAsJsonArray("days");
+
+                            for (JsonElement day: days) {
+                                String dayName = day.getAsJsonObject().get("day").getAsString();
+                                String startDate = day.getAsJsonObject().get("start").getAsString();
+                                Calendar c = Calendar.getInstance();
+                                c.setTime(today);
+
+                                if (dayName.contentEquals(mSelf.dayNames[c.get(Calendar.DAY_OF_WEEK)])) {
+                                    Calendar cal = Calendar.getInstance();
+                                    cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(startDate.split(":")[0]));
+                                    cal.set(Calendar.MINUTE, Integer.parseInt(startDate.split(":")[1]));
+                                    cal.set(Calendar.SECOND, Integer.parseInt(startDate.split(":")[1]));
+                                    cal.set(Calendar.MILLISECOND, 0);
+
+                                    Date d = cal.getTime();
+                                    if (d.after(today)) {
+                                        nexToday.add(section.getAsJsonObject());
+                                    }
+                                }
+                            }
                         }
                     }
                 }
