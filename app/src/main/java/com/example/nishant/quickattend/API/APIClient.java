@@ -14,6 +14,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by jeremy on 4/27/18.
  */
 
+/**
+ *  Class where all the settings for the API are done.
+ */
 public class APIClient {
 
     private static Retrofit retrofit = null;
@@ -42,7 +45,9 @@ public class APIClient {
         OkHttpClient client = builder.build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:6969")
+//                .baseUrl("http://10.0.2.2:6969")
+                .baseUrl("http://163.172.189.61:6969")
+//                .baseUrl("http://192.168.1.137:6969")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

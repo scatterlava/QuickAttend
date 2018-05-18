@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
         mNextTodayView = v.findViewById(R.id.list_next_today);
         mSelf = this;
 
+        // Call API to see if the student is in a section
         Call<JsonElement> call = sectionService.getCurrent();
         call.enqueue(new Callback<JsonElement>() {
             @Override
@@ -93,6 +94,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Set adapter for list
         SectionAdapter sectionAdapter = new SectionAdapter(this.getActivity(), currentSection);
         mCurrentSectionView.setAdapter(sectionAdapter);
         mCurrentSectionView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,6 +107,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Set adapter for list
         SectionAdapter sectionAdapterNext = new SectionAdapter(this.getActivity(), nexToday);
         mNextTodayView.setAdapter(sectionAdapterNext);
 
@@ -147,6 +150,7 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                 JsonArray jObj = response.body().getAsJsonArray();
 
+                // Algorithm to get the section who are coming next today
                 if (response.isSuccessful() && jObj.size() != 0) {
                     for (JsonElement section: jObj) {
                         if (!section.getAsJsonObject().get("_id").getAsString().contentEquals(idCurrent)) {

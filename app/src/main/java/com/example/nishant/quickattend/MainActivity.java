@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Callback on click bottom navigation
         mBottomNav = findViewById(R.id.navigation);
         mBottomNav.setOnNavigationItemSelectedListener(item -> selectFragment(item.getItemId()));
         selectFragment(R.id.menu_home);
     }
 
-
+    // Select good fragment after user pressed an icon in the bottom navigation bar
     public boolean selectFragment(int itemId) {
         Fragment frag = null;
         switch (itemId) {

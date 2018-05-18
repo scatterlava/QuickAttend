@@ -11,6 +11,9 @@ import retrofit2.http.POST;
  * Created by jeremy on 4/27/18.
  */
 
+/**
+ *  Course interface urls
+ */
 public interface AuthenticationService {
 
     @POST("signin")

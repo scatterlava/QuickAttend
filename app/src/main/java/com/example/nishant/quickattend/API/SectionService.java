@@ -14,6 +14,9 @@ import retrofit2.http.Headers;
  * Created by jeremy on 4/29/18.
  */
 
+/**
+ *  Section interface urls
+ */
 public interface SectionService {
 
     @GET("sections/current")

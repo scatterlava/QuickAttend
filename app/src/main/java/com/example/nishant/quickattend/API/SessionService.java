@@ -9,6 +9,9 @@ import retrofit2.http.GET;
  * Created by jeremy on 4/29/18.
  */
 
+/**
+ *  Session interface urls
+ */
 public interface SessionService {
     @GET("sessions/current")
     Call<JsonElement> getCurrent();

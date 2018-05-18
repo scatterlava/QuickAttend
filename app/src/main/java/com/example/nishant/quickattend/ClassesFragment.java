@@ -61,9 +61,11 @@ public class ClassesFragment extends Fragment {
 
         mListClasses = v.findViewById(R.id.list_classes);
 
+        //Set adapter for list view
         SectionAdapter adapter = new SectionAdapter(this.getActivity(), classes);
         mListClasses.setAdapter(adapter);
 
+        // CAll API to retrieve datas
         Call<JsonElement> call = sectionService.getSections();
         call.enqueue(new Callback<JsonElement>() {
             @Override

@@ -50,6 +50,8 @@ public class SignupActivity extends AppCompatActivity {
 
         boolean error = false;
 
+        // Check if some fields are empty
+
         if (TextUtils.isEmpty(mStudentId.getText().toString())) {
             mStudentId.setError("Student Id is required.");
             error = true;
@@ -89,6 +91,8 @@ public class SignupActivity extends AppCompatActivity {
         jObj.addProperty("isTeacher", false);
 
         mSelf = this;
+
+        // Call API to signup
         Call<JsonElement> call = authenticationService.signup(RequestBody.create(MediaType.parse("application/json"), jObj.toString()));
         call.enqueue(new Callback<JsonElement>() {
             @Override
@@ -96,10 +100,12 @@ public class SignupActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     JsonObject jObj = response.body().getAsJsonObject();
 
+                    // Set user token for next calls
                     APIClient.setToken(jObj.get("token").getAsString());
                     SharedPreferences sharedPref = mSelf.getSharedPreferences(getString(R.string.shared_preference), Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
 
+                    // Store user info in sharedPreferences
                     editor.putString("currentUser", jObj.toString());
                     editor.apply();
 

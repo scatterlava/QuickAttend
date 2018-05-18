@@ -1,124 +1,165 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.nishant.quickattend.AccountFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite">
 
-        <TextView
-            android:id="@+id/account_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/account_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Settings"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/FirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="First Name"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/account_title"/>
+    <TextView
+        android:id="@+id/FirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="First Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_title" />
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="300dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/account_title"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_toEndOf="@+id/FirstName"
-            android:textAlignment="viewEnd"
-            android:text=""
-            android:textSize="18sp"/>
-        <TextView
-            android:id="@+id/LastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Last Name"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/FirstName" />
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_title"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_toEndOf="@+id/FirstName"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/FirstName"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="300dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/FirstName"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/LastName"
-            android:textAlignment="viewEnd"
-            android:text=""
-            android:textSize="18sp"/>
-        <TextView
-            android:id="@+id/studentIDfield"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student ID"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/LastName" />
+    <TextView
+        android:id="@+id/LastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FirstName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Last Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
 
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="300dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/LastName"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/studentIDfield"
-            android:textAlignment="viewEnd"
-            android:text=""
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/CSULBmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CSULB mail"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/studentIDfield" />
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FirstName"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/LastName"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LastName"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
-        <TextView
-            android:id="@+id/text4"
-            android:layout_width="300dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/studentIDfield"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/CSULBmail"
-            android:textAlignment="viewEnd"
-            android:text=""
-            android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/studentIDfield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Student ID"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LastName" />
 
-        <Button
-            android:id="@+id/LogoutButton"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="160dp"
-            android:layout_below="@+id/CSULBmail"
-            android:text="Log out"
-            android:textColor="@color/colorWhite"
-            android:layout_centerHorizontal="true"
-            />
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastName"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/studentIDfield"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/studentIDfield"
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/CSULBmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/studentIDfield"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="CSULB mail"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentIDfield" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/studentIDfield"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/CSULBmail"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CSULBmail"
+        app:layout_constraintTop_toBottomOf="@+id/text3" />
+
+    <Button
+        android:id="@+id/LogoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CSULBmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorPrimary"
+        android:text="Log out"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CSULBmail" />
+
+
+</android.support.constraint.ConstraintLayout>

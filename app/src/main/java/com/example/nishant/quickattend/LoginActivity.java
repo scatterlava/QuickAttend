@@ -44,22 +44,25 @@ public class LoginActivity extends AppCompatActivity {
         jObj.addProperty("id", mId.getText().toString());
         jObj.addProperty("password", mPassword.getText().toString());
 
+        // Call API and try to authenticate
         Call<JsonElement> call = authenticationService.signin(RequestBody.create(MediaType.parse("application/json"), jObj.toString()));
         mSelf = this;
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                 if (response.isSuccessful()) {
-                    //TODO: Get token from response
                     JsonObject jObj = response.body().getAsJsonObject();
 
+                    // Set user token for next calls
                     APIClient.setToken(jObj.get("token").getAsString());
                     SharedPreferences sharedPref = mSelf.getSharedPreferences(getString(R.string.shared_preference), Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
 
+                    // Store user info in sharedPreferences
                     editor.putString("currentUser", jObj.toString());
                     editor.apply();
 
+                    // Launch main activity
                     Intent i = new Intent(mSelf, MainActivity.class);
                     startActivity(i);
                     return ;
